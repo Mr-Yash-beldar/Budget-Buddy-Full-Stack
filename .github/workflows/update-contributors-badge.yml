@@ -1,0 +1,20 @@
+name: Update Contributors Badge
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # Run every hour (adjust as needed)
+
+jobs:
+  update-badge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Update the README with the badge URL
+        run: |
+          sed -i "s|!\[Contributors\](.*color=brightgreen)|![Contributors](https://img.shields.io/github/contributors/Mr-Yash-beldar/Budget_Buddy?label=Contributors&color=brightgreen)|" README.md
+          git add README.md
+          git commit -m "Update contributors badge"
+          git push
