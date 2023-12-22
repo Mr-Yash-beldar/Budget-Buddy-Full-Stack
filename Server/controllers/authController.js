@@ -48,7 +48,7 @@ module.exports.signup = async (req, res) => {
       res.status(201).json({ user });
     } catch (err) {
       const errors = handleError(err);
-      res.status(404).json({ errors });
+      res.status(404).json({ errors }); 
     }
   } else {
     res

@@ -22,6 +22,7 @@ const userSchema = new mongoose.Schema({
   },
   budget: {
     type: mongoose.Types.Decimal128,
+    default: 0,
   },
 });
 
